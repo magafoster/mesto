@@ -1,0 +1,11 @@
+.elements__block {
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 282px 1fr;
+  position: relative;
+  white-space: nowrap;
+}
