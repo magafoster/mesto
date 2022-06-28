@@ -1,14 +1,5 @@
 .elements__like-button_active {
-  width: 22px;
-  height: 19px;
   background-image: url(../../../../images/like-button_active.svg);
-  border: none;
-  transition: .2s;
-  outline: none;
-  padding: 0;
 }
 
-.elements__like-button_active:hover {
-  opacity: .5;
-  cursor: pointer;
-}
+
