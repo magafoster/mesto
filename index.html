@@ -28,65 +28,51 @@
     </section>
     <section class="elements-container">
       <ul class="elements">
-        <li class="elements__block">
-          <img src="./images/London.jpg" alt="Лондон" class="elements__image">
-          <div class="elements__title-wrapper">
-            <h2 class="elements__title">Лондон</h2>
-            <button type="button" class="elements__like-button"></button>
-          </div>
-        </li>
-        <li class="elements__block">
-          <img src="./images/Los_Angeles.jpg" alt="Лос-Анджелес" class="elements__image">
-          <div class="elements__title-wrapper">
-            <h2 class="elements__title">Лос-Анджелес</h2>
-            <button type="button" class="elements__like-button"></button>
-          </div>
-        </li>
-        <li class="elements__block">
-          <img src="./images/Milano.jpg" alt="Милан" class="elements__image">
-          <div class="elements__title-wrapper">
-            <h2 class="elements__title">Милан</h2>
-            <button type="button" class="elements__like-button"></button>
-          </div>
-        </li>
-        <li class="elements__block">
-          <img src="./images/Moscow.jpg" alt="Москва" class="elements__image">
-          <div class="elements__title-wrapper">
-            <h2 class="elements__title">Москва</h2>
-            <button type="button" class="elements__like-button elements__like-button_active"></button>
-          </div>
-        </li>
-        <li class="elements__block">
-          <img src="./images/Tokyo.jpg" alt="Токио" class="elements__image">
-          <div class="elements__title-wrapper">
-            <h2 class="elements__title">Токио</h2>
-            <button type="button" class="elements__like-button"></button>
-          </div>
-        </li>
-        <li class="elements__block">
-          <img src="./images/Dubai.jpg" alt="Дубай" class="elements__image">
-          <div class="elements__title-wrapper">
-            <h2 class="elements__title">Дубай</h2>
-            <button type="button" class="elements__like-button"></button>
-          </div>
-        </li>
       </ul>
     </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
-  <section class="popup">
+  <section class="popup" id="popup-profile">
     <div class="popup__container">
-      <button type="button" class="popup__close-button"></button>
+      <button type="button" class="popup__close-button" id="closeProfile"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="user-info">
-        <input type="text" class="popup__input popup__input_type_text" name="name">
-        <input type="text" class="popup__input popup__input_type_text" name="info">
-        <button type="submit" class="popup__button">Сохранить</button>
+      <form class="popup__form" name="user-info" id="profileForm">
+        <input type="text" class="popup__input popup__input_type_text" name="name" id="nameInput" placeholder="ФИО" required>
+        <input type="text" class="popup__input popup__input_type_text" name="info" id="professionInput" placeholder="Профессия">
+        <button type="submit" class="popup__button" id="profileSubmit">Сохранить</button>
       </form>
     </div>
   </section>
+  <section class="popup" id="popup-card">
+    <div class="popup__container">
+      <button type="button" class="popup__close-button" id="closeCard"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__form" name="card-info" id="cardForm">
+        <input type="text" class="popup__input popup__input_type_text" name="cardname" id="cardNameInput" placeholder="Место" required>>
+        <input type="url" class="popup__input popup__input_type_text" name="link" id="cardLinkInput" placeholder="https:://" required>
+        <button type="submit" class="popup__button" id="submitCard">Создать</button>
+      </form>
+    </div>
+  </section>
+  <section class="popup" id="popup-img">
+    <div class="popup__container-img">
+      <img class="popup__img">
+      <p class="popup__text-img"></p>
+      <button type="button" class="popup__close-button" id="imgClose"></button>
+    </div>
+  </section>
+  <template id="card-template">
+    <li class="elements__block">
+      <img class="elements__image">
+      <button class="elements__delete-button" type="button"></button>
+      <div class="elements__title-wrapper">
+        <h2 class="elements__title"></h2>
+        <button type="button" class="elements__like-button"></button>
+      </div>
+    </li>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 </html>

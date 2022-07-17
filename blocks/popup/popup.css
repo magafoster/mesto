@@ -6,10 +6,13 @@
   align-items: center;
   padding: 0 19px;
   box-sizing: border-box;
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .5s, opacity .5s ease-in;
 }
