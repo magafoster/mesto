@@ -40,9 +40,9 @@
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form" name="user-info" id="profileForm" novalidate>
         <input type="text" class="popup__input popup__input_type_text" name="name" id="nameInput" placeholder="Имя" minlength="2" maxlength="40" required>
-        <span class="popup__error"></span>
+        <span class="popup__error name-error"></span>
         <input type="text" class="popup__input popup__input_type_text" name="info" id="professionInput" placeholder="О себе" minlength="2" maxlength="200" required>
-        <span class="popup__error"></span>
+        <span class="popup__error info-error"></span>
         <button type="submit" class="popup__button" id="profileSubmit">Сохранить</button>
       </form>
     </div>
@@ -53,9 +53,9 @@
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form" name="card-info" id="cardForm" novalidate>
         <input type="text" class="popup__input popup__input_type_text" name="cardname" id="cardNameInput" placeholder="Место" minlength="2" maxlength="30" required>
-        <span class="popup__error"></span>
+        <span class="popup__error cardname-error"></span>
         <input type="url" class="popup__input popup__input_type_text" name="link" id="cardLinkInput" placeholder="https:://" required>
-        <span class="popup__error"></span>
+        <span class="popup__error link-error"></span>
         <button type="submit" class="popup__button" id="submitCard" disabled>Создать</button>
       </form>
     </div>

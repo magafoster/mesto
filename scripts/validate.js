@@ -3,6 +3,7 @@ const form = {
   input: ".popup__input",
   button: ".popup__button",
   error: ".popup__error",
+  inputError: "popup__input_type_error",
 };
 
 function enableValidation(config) {
@@ -10,40 +11,35 @@ function enableValidation(config) {
   form.forEach((form) => {
     form.addEventListener("input", (evt) => handleFormInput(evt, config));
   });
-  form.forEach((form) => {
-    form.addEventListener("submit", (evt) => handleFormSubmit(evt, config));
-  });
 }
 
 function handleFormInput(evt, config) {
   const input = evt.target;
   const form = evt.currentTarget;
-
-  showFieldError(input);
-  setSubmitButtonState(form, config);
-}
-
-function handleFormSubmit(evt) {
-  evt.preventDefault();
-  const form = evt.currentTarget;
-  const isValid = form.checkValidity();
-
-  if (isValid) {
-    form.reset();
-  }
-}
-
-function showFieldError(input) {
-  const span = input.nextElementSibling;
-  if (!input.validity.valid) {
-    span.textContent = input.validationMessage;
-  } else {
-    span.textContent = "";
-  }
-}
-
-function setSubmitButtonState(form, config) {
   const button = form.querySelector(config.button);
+  if (!input.validity.valid) {
+    showFieldError(input, form, config);
+  } else {
+    hideFieldError(input, form, config);
+  }
+  setSubmitButtonState(form, button);
+}
+
+
+function showFieldError(input, form, config) {
+  const span = form.querySelector(`.${input.name}-error`);
+  span.textContent = input.validationMessage;
+  input.classList.add(config.inputError);
+}
+
+function hideFieldError(input, form, config) {
+  const span = form.querySelector(`.${input.name}-error`);
+  span.textContent = "";
+  input.classList.remove(config.inputError);
+}
+
+
+function setSubmitButtonState(form, button) {
   const isValid = form.checkValidity();
   if (!isValid) {
     button.setAttribute("disabled", true);
